@@ -5,6 +5,8 @@ from detector.faceDetector import FaceDetector
 
 detector=FaceDetector()
 camera=VideoCapture()
+
+
 try:
     for ret,frame in camera.get_frames():
         if not ret:

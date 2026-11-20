@@ -38,10 +38,12 @@ class FaceDetector:
 
             x2 = min(width, int(x + w))
             y2 = min(height, int(y + h))
+            face_data = face.astype("float32").reshape(1, 15).copy()
 
             detections.append({
                 "bbox":(x1,y1,x2,y2),
-                "confidence":confidence
+                "confidence":confidence,
+                "yunet_face":face_data
             })
         return detections
 
